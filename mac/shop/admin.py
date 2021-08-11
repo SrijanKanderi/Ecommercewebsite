@@ -1,6 +1,8 @@
+
 from django.contrib import admin
 from .models.products import Product
 from .models.categories import Category
+from .models.customer_data import Customer
 
 
 class Product_view(admin.ModelAdmin):
@@ -12,3 +14,4 @@ class Category_view(admin.ModelAdmin):
 
 admin.site.register(Product, Product_view )
 admin.site.register(Category, Category_view)
+admin.site.register(Customer)

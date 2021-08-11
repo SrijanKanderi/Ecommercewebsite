@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}E-Commerce{% endblock %}
+{% load static %}
 
 
 {% block content %}
@@ -10,15 +11,17 @@
     <!--filter-->
 
     <!-- all products -->
-    <div id = 'products' class= "col mt-4">
-      <div class = "row p-4 m-4 ">
+    <div id = 'products' class= "col mt-5"  >
+      <div class = "row p ml-2" >
         {% for product in Products%}
-        <div class="card p-2 m-2 ml-4" style="width: 20rem;">
+        <div class="card p-2  m-3" style="width: 17rem;" >
           <img class="card-img-top" src="{{product.product_image.url}}" alt="Card image cap">
-            <div class="card-body">
+            <div class="card-body" style="background-image: url({% static 'shop/best.png' %}");>
               <h5 class="card-title">{{product.product_name}}</h5>
-              <p class="card-text">{{product.product_desc}}</p>
-              <a href="#" class="btn btn-primary">Add To Cart</a>
+              <p class="card-text">{{product.product_price}}</p>
+              <form action = "/home" method = "POST"> {% csrf_token %}
+                <button class="btn btn-success" type = "submit" value = {{product.id}} name = "productid" >Add to Cart!</button> 
+              </form>
             </div>
         </div>
             {% endfor %}

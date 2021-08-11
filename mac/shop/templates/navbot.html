@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom mb-n2">
   
-  <a class="nav-item mx-auto" href="/"><p style="color:#2C2C2C"; class="font-weight-light">All</p></a>
-  {% for category in Categories %}
-  <a class="nav-item mx-auto" href="/?Category={{category.id}}"><p style="color:#2C2C2C"; class="font-weight-light">{{category.Category_name}}</p></a>
-  {% endfor %}
-  </div>
+    <a class="nav-item mx-auto" href="/"><p style="color:#2C2C2C"; class="font-weight-light">All</p></a>
+    {% for category in Categories %}
+    <a class="nav-item mx-auto" href="/?Category={{category.id}}"><p style="color:#2C2C2C"; class="font-weight-light">{{category.Category_name}}</p></a>
+    {% endfor %}
 </nav>
+
